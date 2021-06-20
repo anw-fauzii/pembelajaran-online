@@ -1,15 +1,41 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+@extends('layouts.app')
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <x-jet-welcome />
-            </div>
-        </div>
+@section('title')
+    <title>Dashboard</title>
+@endsection
+
+@section('content')
+<div class="app-main__inner">
+    <div class="app-page-title">
+        <div class="page-title-wrapper">
+            <div class="page-title-heading">
+                <div class="page-title-icon">
+                    <i class="pe-7s-home icon-gradient bg-mean-fruit"></i>
+                </div>
+                <div>Dashboard
+                    <div class="page-title-subheading">This is an example dashboard created using build-in elements and components.
+                    </div>
+                </div>
+            </div>  
+        </div> 
     </div>
-</x-app-layout>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="mb-3 card">
+                <div class="card-header-tab card-header-tab-animation card-header">
+                    <div class="card-header-title">
+                        Success!
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="tab-content">
+                        <div class="card-body">
+                            <div id="container">You Loggin in as</div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>    
+    </div>
+</div>
+@endsection
