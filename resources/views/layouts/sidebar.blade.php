@@ -40,12 +40,6 @@
                     </a>
                 </li>
                 <li>
-                    <a href="https://api.whatsapp.com/send?phone=6285784189811" target="_blank">
-                        <i class="metismenu-icon pe-7s-box2"></i>
-                            NULL
-                    </a>
-                </li>
-                <li>
                     <a href="#">
                         <i class="metismenu-icon pe-7s-box2"></i>
                             Elements
@@ -53,13 +47,13 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="#">
-                                <i class="metismenu-icon"></i>Hp
+                            <a href="{{route('mapel.index')}}">
+                                <i class="metismenu-icon"></i>Mata Pelajaran
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="metismenu-icon"></i>Merk
+                            <a href="{{route('jurusan.index')}}">
+                                <i class="metismenu-icon"></i>Jurusan
                             </a>
                         </li>
                     </ul>
