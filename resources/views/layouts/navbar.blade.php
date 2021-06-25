@@ -34,25 +34,31 @@
                     <div class="header-btn-lg pr-0">
                         <div class="widget-content p-0">
                             <div class="widget-content-wrapper">
-                                <div class="widget-content-left">                             
-                                    <div class="btn-group">
-                                        <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
-                                            <img width="42" class="rounded-circle" src="{{asset('storage/logo/user.png')}}" alt="">
-                                            <i class="pe-7s-angle-down"></i>
+                                <div class="widget-content-left">                                 
+                                    <div class="dropdown show">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            @if(Auth::user()->logo == NULL)
+                                            <img width="42" class="rounded-circle" src="{{asset('storage/user.png')}}" alt="">
+                                            @else
+                                            <img width="42" class="rounded-circle" src="{{asset('storage/'. Auth::user()->logo)}}" alt="">
+                                            @endif
                                         </a>
-                                        <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
-                                            <ul class="vertical-nav-menu">
-                                                <li>
-                                                    <a href="#">Ubah Password</a>
-                                                </li> 
-                                                <li>
-                                                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();">Logout</a>
-                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                                        @csrf
-                                                    </form>
-                                                </li>
-                                            </ul>
+                                        <div class="dropdown-menu">
+                                        <div class="text-center">
+                                        @if(Auth::user()->logo == NULL)
+                                            <img width="100" class="rounded-circle" src="{{asset('storage/user.png')}}" alt="">
+                                            @else
+                                            <img width="100" class="rounded-circle" src="{{asset('storage/'. Auth::user()->logo)}}" alt="">
+                                        @endif
+                                        </div>
+                                        <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Profil</a>
+                                            <a class="dropdown-item" href="#">Ganti Password</a>
+                                            <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">Keluar</a>
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                    @csrf
+                                                </form>
                                         </div>
                                     </div>
                                 </div>

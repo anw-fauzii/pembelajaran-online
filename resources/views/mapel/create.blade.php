@@ -8,13 +8,13 @@
                 <form id="mapelFormCreate" name="mapelFormCreate" class="form-horizontal">
                     <input type="hidden" name="mapel_id" id="mapel_id">
                     <div class="form-group">
-                        <label for="name" class="col-sm-5 control-label">Kode</label>
-                        <div class="col-sm-12">
-                            <input type="text" class="form-control" id="kd_mapel" name="kd_mapel" placeholder="Masukan Kode Mata Pelajaran" value="" maxlength="50" required="">
+                        <div class="position-relative row form-group"><label class="col-sm-4 col-form-label" for="kd_mapel">Kode</label>
+                            <div class="col-sm-8"><input type="text" class="form-control" id="kd_mapel" name="kd_mapel" placeholder="Masukan Kode Mapel" value="" maxlength="50" required="">
+                                </div>
                         </div>
-                        <label for="name" class="col-sm-5 control-label">Mata Pelajaran</label>
-                        <div class="col-sm-12">
-                            <input type="text" class="form-control" id="nama_mapel" name="nama_mapel" placeholder="Masukan Mata Pelajaran" value="" maxlength="50" required="">
+                        <div class="position-relative row form-group"><label class="col-sm-4 col-form-label" for="nama_mapel">Mata Pelajaran</label>
+                            <div class="col-sm-8"><input type="text" class="form-control" id="nama_mapel" name="nama_mapel" placeholder="Masukan Mata Pelajaran" value="" maxlength="50" required="">
+                                </div>
                         </div>
                     </div>
                     <div class="col-sm-offset-2 col-sm-10">

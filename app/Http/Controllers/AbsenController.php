@@ -90,4 +90,8 @@ class AbsenController extends Controller
         Absen::create($data);
         return redirect()->back()->with('success','Check-in berhasil');
     }
+
+    public function forum(){
+        return view('forum');
+    }
 }

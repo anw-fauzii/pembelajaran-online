@@ -34,9 +34,15 @@
             <ul class="vertical-nav-menu">
                 <li class="app-sidebar__heading">Menu Utama</li>
                 <li>
-                    <a href="/dashboard">
+                    <a href="{{route('kehadiran')}}">
+                        <i class="metismenu-icon pe-7s-clock"></i>
+                            Absen Harian
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('forum')}}">
                         <i class="metismenu-icon pe-7s-home"></i>
-                            Dashboard
+                            Forum
                     </a>
                 </li>
                 <li>
