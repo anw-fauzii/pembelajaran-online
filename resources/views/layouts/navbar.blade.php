@@ -37,19 +37,11 @@
                                 <div class="widget-content-left">                                 
                                     <div class="dropdown show">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            @if(Auth::user()->logo == NULL)
                                             <img width="42" class="rounded-circle" src="{{asset('storage/user.png')}}" alt="">
-                                            @else
-                                            <img width="42" class="rounded-circle" src="{{asset('storage/'. Auth::user()->logo)}}" alt="">
-                                            @endif
                                         </a>
                                         <div class="dropdown-menu">
                                         <div class="text-center">
-                                        @if(Auth::user()->logo == NULL)
                                             <img width="100" class="rounded-circle" src="{{asset('storage/user.png')}}" alt="">
-                                            @else
-                                            <img width="100" class="rounded-circle" src="{{asset('storage/'. Auth::user()->logo)}}" alt="">
-                                        @endif
                                         </div>
                                         <div class="dropdown-divider"></div>
                                             <a class="dropdown-item" href="#">Profil</a>
@@ -64,10 +56,10 @@
                                 </div>
                                 <div class="widget-content-right ml-3 header-user-info">
                                     <div class="widget-heading">
-                                        <strong>{{ Auth::user()->name }}</strong>
+                                        <strong>{{ Auth::user()->id }}</strong>
                                     </div>
                                     <div class="widget-subheading">
-                                        {{ Auth::user()->email }}    
+                                        {{ Auth::user()->id }}    
                                     </div>
                                 </div>
                             </div>

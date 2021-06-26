@@ -13,7 +13,10 @@ class Absen extends Model
     protected $table = "absen";
 
     protected $fillable = [
-        'user_id', 'tanggal', 'keterangan', 'jam_absen'
+        'siswa_id',
+        'tanggal',
+        'keterangan',
+        'jam_absen'
     ];
     
 }

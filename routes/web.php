@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MapelController;
 use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\AbsenController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,8 +21,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('kehadiran', [AbsenController::class, 'index'])->name('kehadiran');
-Route::post('absen', [AbsenController::class, 'absen'])->name('absen');
-Route::get('forum', [AbsenController::class, 'forum'])->name('forum');
-Route::resource('mapel', MapelController::class);
-Route::resource('jurusan', JurusanController::class);
+Route::group(['middleware' => ['auth:sanctum', 'verified']], function () { 
+    Route::get('dashboard', [HomeController::class, 'index'])->name('dashboard');
+    Route::middleware(['auth:sanctum', 'verified'])->get('kehadiran', [AbsenController::class, 'index'])->name('kehadiran');
+    Route::post('absen', [AbsenController::class, 'absen'])->name('absen');
+    Route::get('forum', [AbsenController::class, 'forum'])->name('forum');
+    Route::resource('mapel', MapelController::class);
+    Route::resource('jurusan', JurusanController::class);
+});
