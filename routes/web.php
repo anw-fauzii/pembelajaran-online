@@ -5,6 +5,7 @@ use App\Http\Controllers\MapelController;
 use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\AbsenController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\GuruController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,4 +29,5 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::get('forum', [AbsenController::class, 'forum'])->name('forum');
     Route::resource('mapel', MapelController::class);
     Route::resource('jurusan', JurusanController::class);
+    Route::resource('guru', GuruController::class);
 });

@@ -14,7 +14,8 @@ class CreateTableGuru extends Migration
     public function up()
     {
         Schema::create('guru', function (Blueprint $table) {
-            $table->bigIncrements('nip')->unsigned();
+            $table->increments('id');
+            $table->bigInteger('nip')->unsigned();
             $table->string('nama');
             $table->bigInteger('kontak');
             $table->timestamps();

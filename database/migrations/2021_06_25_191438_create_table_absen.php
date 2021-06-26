@@ -21,7 +21,7 @@ class CreateTableAbsen extends Migration
             $table->enum('keterangan',['Tepat Waktu','Alpha','Telat','Sakit']);
             $table->timestamps();
 
-            $table->foreign('siswa_id')->references('id')->on('siswa')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('siswa_id')->references('nis')->on('siswa')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
