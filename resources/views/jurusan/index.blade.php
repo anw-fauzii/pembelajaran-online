@@ -48,5 +48,5 @@
     </div>
 </div>
 @include('jurusan.create')
-@include('layouts.crud')      
+<script src="{{asset('js/crud/jurusan.js')}}"></script>     
 @endsection

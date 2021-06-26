@@ -63,7 +63,26 @@
                             </a>
                         </li>
                     </ul>
-                </li>               
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="metismenu-icon pe-7s-box2"></i>
+                            Elements
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="{{route('mapel.index')}}">
+                                <i class="metismenu-icon"></i>Siswa
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{route('jurusan.index')}}">
+                                <i class="metismenu-icon"></i>Guru
+                            </a>
+                        </li>
+                    </ul>
+                </li>                 
             </ul>
         </div>
     </div>

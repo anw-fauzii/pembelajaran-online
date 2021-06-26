@@ -48,5 +48,5 @@
     </div>
 </div>
 @include('mapel.create')
-@include('layouts.crud')      
+<script src="{{asset('js/crud/mapel.js')}}"></script>
 @endsection
