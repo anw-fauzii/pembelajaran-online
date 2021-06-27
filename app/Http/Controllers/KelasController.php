@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kelas;
+use App\Models\Jurusan;
 use App\Models\Guru;
-use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use DataTables;
 
-class GuruController extends Controller
+class KelasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +17,10 @@ class GuruController extends Controller
      */
     public function index(Request $request)
     {
+        $jurusan = Jurusan::pluck('nama_jurusan', 'id');
+        $guru = Guru::pluck('nama_guru', 'nip');
         if ($request->ajax()) {
-            $data = Guru::all();
+            $data = Kelas::with('jurusan')->get();
             return Datatables::of($data)
                     ->addIndexColumn()
                     ->addColumn('action', function($row){
@@ -27,10 +29,16 @@ class GuruController extends Controller
     
                             return $btn;
                     })
+                    ->addColumn('jurusan', function($data){
+                        return $data->jurusan->nama_jurusan;
+                    })
+                    ->addColumn('guru', function($data){
+                        return $data->guru->nama_guru;
+                    })
                     ->rawColumns(['action'])
                     ->make(true);
         }
-        return view('guru.index');
+        return view('kelas.index', compact('jurusan','guru'));
     }
 
     /**
@@ -51,35 +59,24 @@ class GuruController extends Controller
      */
     public function store(Request $request)
     {
-        if($request->nip_old != NULL){
-            $user = User::find($request->nip_old);
-            $user->id = $request->nip;
-            $user->password = Hash::make("12345678");
-            $user->save();
-        }else{
-            $user = new User;
-            $user->id = $request->nip;
-            $user->password = Hash::make("12345678");
-            $user->save();
-        }
-        $guru = Guru::updateOrCreate(
+        $kelas = Kelas::updateOrCreate(
             ['id' => $request->id],
             [
-                'nip' => $request->nip,
-                'nama_guru' => $request->nama_guru,
-                'kontak' => $request->kontak
+                'jurusan_id' => $request->jurusan_id,
+                'guru_id' => $request->guru_id,
+                'nama' => $request->nama,
             ]
         );
-        return response()->json($guru);
+        return response()->json($kelas);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Guru  $guru
+     * @param  \App\Models\Kelas  $kelas
      * @return \Illuminate\Http\Response
      */
-    public function show(Guru $guru)
+    public function show(Kelas $kelas)
     {
         //
     }
@@ -87,23 +84,23 @@ class GuruController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Guru  $guru
+     * @param  \App\Models\Kelas  $kelas
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $guru = Guru::find($id);
-        return response()->json($guru);
+        $kelas = Kelas::find($id);
+        return response()->json($kelas);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Guru  $guru
+     * @param  \App\Models\Kelas  $kelas
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Guru $guru)
+    public function update(Request $request, Kelas $kelas)
     {
         //
     }
@@ -111,15 +108,13 @@ class GuruController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Guru  $guru
+     * @param  \App\Models\Kelas  $kelas
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $guru = Guru::find($id);
-        $user = User::find($guru->nip);
-        $user->delete();
-        $guru->delete();
-        return response()->json($guru);
+        $kelas = Kelas::find($id);
+        $kelas->delete();
+        return response()->json($kelas);
     }
 }

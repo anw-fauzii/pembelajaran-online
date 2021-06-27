@@ -13,8 +13,8 @@
                             <div class="col-sm-8"><input type="text" class="form-control" id="nip" name="nip" placeholder="Masukan Kode Jurusan" value="" maxlength="50" required="">
                                 </div>
                         </div>
-                        <div class="position-relative row form-group"><label class="col-sm-4 col-form-label" for="nama">Nama</label>
-                            <div class="col-sm-8"><input type="text" class="form-control" id="nama" name="nama" placeholder="Masukan Jurusan" value="" maxlength="50" required="">
+                        <div class="position-relative row form-group"><label class="col-sm-4 col-form-label" for="nama_guru">Mata Pelajaran</label>
+                            <div class="col-sm-8"><input type="text" class="form-control" id="nama_guru" name="nama_guru" placeholder="Masukan Mata Pelajaran" value="" maxlength="50" required="">
                                 </div>
                         </div>
                         <div class="position-relative row form-group"><label class="col-sm-4 col-form-label" for="kontak">Kontak</label>

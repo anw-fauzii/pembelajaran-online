@@ -72,13 +72,13 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="{{route('mapel.index')}}">
-                                <i class="metismenu-icon"></i>Siswa
+                            <a href="{{route('guru.index')}}">
+                                <i class="metismenu-icon"></i>Guru
                             </a>
                         </li>
                         <li>
-                            <a href="{{route('jurusan.index')}}">
-                                <i class="metismenu-icon"></i>Guru
+                            <a href="{{route('kelas.index')}}">
+                                <i class="metismenu-icon"></i>Kelas
                             </a>
                         </li>
                     </ul>

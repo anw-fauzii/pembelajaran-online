@@ -6,6 +6,7 @@ use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\AbsenController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\GuruController;
+use App\Http\Controllers\KelasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,4 +31,5 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::resource('mapel', MapelController::class);
     Route::resource('jurusan', JurusanController::class);
     Route::resource('guru', GuruController::class);
+    Route::resource('kelas', KelasController::class);
 });

@@ -11,7 +11,11 @@ class Guru extends Model
     protected $table = "guru";
     protected $fillable = [
         'nip',
-        'nama',
+        'nama_guru',
         'kontak'
     ];
+
+    public function kelas(){
+        return $this->belongsToMany(Kelas::class);
+    }
 }

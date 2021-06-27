@@ -13,4 +13,8 @@ class Jurusan extends Model
         'kd_jurusan',
         'nama_jurusan'
     ];
+
+    public function kelas(){
+        return $this->belongsToMany(Kelas::class);
+    }
 }
