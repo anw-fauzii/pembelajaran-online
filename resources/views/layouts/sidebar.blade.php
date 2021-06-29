@@ -89,7 +89,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="{{route('forum')}}">
+                    <a href="{{route('jadwal.index')}}">
                         <i class="metismenu-icon pe-7s-note2"></i>
                             Jadwal Pelajaran
                     </a>
