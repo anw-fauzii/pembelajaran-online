@@ -13,12 +13,12 @@
                             <div class="col-sm-8"><input type="text" class="form-control" id="nis" name="nis" placeholder="Masukan Kode Jurusan" value="" maxlength="50" required="">
                                 </div>
                         </div>
-                        <div class="position-relative row form-group"><label class="col-sm-4 col-form-label" for="nama">Mata Pelajaran</label>
+                        <div class="position-relative row form-group"><label class="col-sm-4 col-form-label" for="nama">Nama Siswa</label>
                             <div class="col-sm-8"><input type="text" class="form-control" id="nama" name="nama" placeholder="Masukan Mata Pelajaran" value="" maxlength="50" required="">
                                 </div>
                         </div>
-                        <div class="position-relative row form-group"><label class="col-sm-2 col-form-label" for="">JK</label>
-                            <div class="col-sm-10">
+                        <div class="position-relative row form-group"><label class="col-sm-4 col-form-label" for="">JK</label>
+                            <div class="col-sm-8">
                                 <div>
                                     <div class="custom-radio custom-control custom-control-inline jk"><input type="radio" id="Laki-Laki" value="Laki-Laki" name="jk" id="jk" class="custom-control-input"><label class="custom-control-label"
                                         for="Laki-Laki">Laki-Laki</label></div>

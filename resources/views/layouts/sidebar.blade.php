@@ -47,7 +47,7 @@
                 </li>
                 <li>
                     <a href="#">
-                        <i class="metismenu-icon pe-7s-box2"></i>
+                        <i class="metismenu-icon pe-7s-study"></i>
                             Elements
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
@@ -66,7 +66,7 @@
                 </li>
                 <li>
                     <a href="#">
-                        <i class="metismenu-icon pe-7s-box2"></i>
+                        <i class="metismenu-icon pe-7s-users"></i>
                             Elements
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
@@ -81,7 +81,18 @@
                                 <i class="metismenu-icon"></i>Kelas
                             </a>
                         </li>
+                        <li>
+                            <a href="{{route('siswa.index')}}">
+                                <i class="metismenu-icon"></i>Siswa
+                            </a>
+                        </li>
                     </ul>
+                </li>
+                <li>
+                    <a href="{{route('forum')}}">
+                        <i class="metismenu-icon pe-7s-note2"></i>
+                            Jadwal Pelajaran
+                    </a>
                 </li>                 
             </ul>
         </div>

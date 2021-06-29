@@ -43,7 +43,7 @@ $(function () {
                 $('#id').val(data.id);
                 $('#nip').val(data.nip);
                 $('#nip_old').val(data.nip);
-                $('#nama').val(data.nama);
+                $('#nama_guru').val(data.nama_guru);
                 $('#kontak').val(data.kontak);
         })
     });

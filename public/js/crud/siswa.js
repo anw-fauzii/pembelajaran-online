@@ -38,7 +38,7 @@ $(function () {
 //EDIT Siswa
     $('body').on('click', '.edit', function () {
         var id = $(this).data('id');
-        $.get("siswa" +'/' + id +'/edit', function (data) {
+        $.get("/siswa" +'/' + id +'/edit', function (data) {
             $('#modelHeading').html("Edit Siswa");
                 $('#saveBtn').val("edit-mapel");
                 $('#modalCreate').modal('show');
@@ -61,7 +61,7 @@ $(function () {
         $(this).html('Menyimpan..');
         $.ajax({
             data: $('#formCreate').serialize(),
-            url: "siswa",
+            url: "/siswa",
             type: "POST",
             dataType: 'json',
             success: function (data) {
@@ -90,7 +90,7 @@ $(function () {
                 if (result.isConfirmed){
                     $.ajax({
                     type: "DELETE",
-                    url: "siswa"+'/'+id,
+                    url: "/siswa"+'/'+id,
                     success: function (data) {
                         table.draw();
                         Swal.fire("Sukes!", "Siswa Berhasil Dihapus!", "success");

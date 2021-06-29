@@ -51,16 +51,7 @@ class SiswaController extends Controller
      */
     public function store(Request $request)
     {
-        if($request->nis_old != NULL){
-            $user_siswa = User::find($request->nis_old);
-            $user_siswa->id = $request->nis;
-            $user_siswa->password = Hash::make("12345678");
-            $user_siswa->save();
-            $user_ortu = User::find("99$request->nis_old");
-            $user_ortu->id = "99$request->nis";
-            $user_ortu->password = Hash::make("12345678");
-            $user_ortu->save();
-        }else{
+        if($request->nis_old == NULL){
             $user_siswa = new User;
             $user_siswa->id = $request->nis;
             $user_siswa->password = Hash::make("12345678");
@@ -69,10 +60,18 @@ class SiswaController extends Controller
             $user_ortu->id = "99$request->nis";
             $user_ortu->password = Hash::make("12345678");
             $user_ortu->save();
+        }else{
+            $user_siswa = User::find($request->nis_old);
+            $user_siswa->id = $request->nis;
+            $user_siswa->save();
+            $user_ortu = User::find("99$request->nis_old");
+            $user_ortu->id = "99$request->nis";
+            $user_ortu->save();
         }
         $siswa = Siswa::updateOrCreate(
             ['id' => $request->id],
             [
+                'kelas_id' => $request->kelas_id,
                 'nis' => $request->nis,
                 'nama' => $request->nama,
                 'jk' => $request->jk,

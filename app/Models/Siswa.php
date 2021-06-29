@@ -10,6 +10,7 @@ class Siswa extends Model
     use HasFactory;
     protected $table = "siswa";
     protected $fillable =[
+        'kelas_id',
         'nis',
         'nama',
         'jk',
@@ -17,4 +18,8 @@ class Siswa extends Model
         'ortu',
         'kontak'
     ];
+
+    public function kelas(){
+        return $this->belongsTo(Kelas::class);
+    }
 }

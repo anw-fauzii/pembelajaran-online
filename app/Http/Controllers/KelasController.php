@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Kelas;
 use App\Models\Jurusan;
 use App\Models\Guru;
+use App\Models\Siswa;
 use Illuminate\Http\Request;
 use DataTables;
 
@@ -26,6 +27,7 @@ class KelasController extends Controller
                     ->addColumn('action', function($row){
                            $btn = '<a href="javascript:void(0)" data-toggle="tooltip" title="Edit" data-id="'.$row->id.'" data-original-title="Edit" class="edit btn btn-info btn-sm edit"><i class="metismenu-icon pe-7s-pen"></i></a>';
                            $btn = $btn.' <a href="javascript:void(0)" data-toggle="tooltip" title="Hapus" data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-danger btn-sm delete"><i class="metismenu-icon pe-7s-trash"></i></a>';
+                           $btn = $btn.' <a href="'.route('kelas.show', $row->id).'" data-toggle="tooltip" title="Daftar Siswa" data-id="'.$row->id.'" data-original-title="Edit" class="btn btn-warning btn-sm"><i class="metismenu-icon pe-7s-users"></i></a>';
     
                             return $btn;
                     })
@@ -76,9 +78,23 @@ class KelasController extends Controller
      * @param  \App\Models\Kelas  $kelas
      * @return \Illuminate\Http\Response
      */
-    public function show(Kelas $kelas)
+    public function show(Request $request, $id)
     {
-        //
+        $kelas = Kelas::find($id);
+        if ($request->ajax()) {
+            $data = Siswa::where('kelas_id', $id)->get();
+            return Datatables::of($data)
+                    ->addIndexColumn()
+                    ->addColumn('action', function($row){
+                           $btn = '<a href="javascript:void(0)" data-toggle="tooltip" title="Edit" data-id="'.$row->id.'" data-original-title="Edit" class="edit btn btn-info btn-sm edit"><i class="metismenu-icon pe-7s-pen"></i></a>';
+                           $btn = $btn.' <a href="javascript:void(0)" data-toggle="tooltip" title="Hapus" data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-danger btn-sm delete"><i class="metismenu-icon pe-7s-trash"></i></a>';
+    
+                            return $btn;
+                    })
+                    ->rawColumns(['action'])
+                    ->make(true);
+        }
+        return view('kelas.show', compact('kelas'));
     }
 
     /**
