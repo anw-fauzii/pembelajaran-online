@@ -20,21 +20,34 @@
         </div> 
     </div>
     <div class="row">
-      <div class="col-md-12 mb-3">
-        <div class="accordion" id="accordionExample">
-            <div class="accordion-item card">
-                <div id="headingTwo" class="card-header">
-                  <button data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" class="text-left m-0 p-0 btn btn-link btn-block">
-                  <h5 class="m-0 p-0">Collapsible Group Item #1</h5>
-                  </button>
+        <div class="col-md-12 mb-3">
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item card">
+                    <div id="headingTwo" class="card-header">
+                    <button data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" class="text-left m-0 p-0 btn btn-link btn-block">
+                    <h5 class="m-0 p-0">Collapsible Group Item #1</h5>
+                    </button>
+                    </div>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="card-body">
+                        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                    </div>
+                    </div>
                 </div>
-                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                  <div class="card-body">
-                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                  </div>
+                <div class="accordion-item card">
+                    <div id="headingTwo" class="card-header">
+                    <button data-bs-toggle="collapse" data-bs-target="#pelajaran" aria-expanded="false" aria-controls="pelajaran" class="text-left m-0 p-0 btn btn-link btn-block">
+                    <h5 class="m-0 p-0">Collapsible Group Item #1</h5>
+                    </button>
+                    </div>
+                    <div id="pelajaran" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="card-body">
+                        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                    </div>
+                    </div>
                 </div>
             </div>
-        </div>
+                
         </div>
     </div>
     <div class="card mb-4">

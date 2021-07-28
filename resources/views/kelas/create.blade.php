@@ -8,12 +8,12 @@
                 <form id="formCreate" name="formCreate" class="form-horizontal">
                     <div class="form-group">
                     <input type="hidden" name="id" id="id">
-                        <div class="position-relative row form-group"><label class="col-sm-4 col-form-label" for="nama">Nama</label>
-                            <div class="col-sm-8"><input type="text" class="form-control" id="nama" name="nama" placeholder="Masukan Jurusan" value="" maxlength="50" required="">
+                        <div class="position-relative row form-group"><label class="col-sm-3 col-form-label" for="nama">Kelas</label>
+                            <div class="col-sm-9"><input type="text" class="form-control" id="nama" name="nama" placeholder="Masukan Kelas" value="" maxlength="50" required="">
                                 </div>
                         </div>
-                        <div class="position-relative row form-group"><label class="col-sm-4 col-form-label" for="jurusan_id">Jurusan</label>
-                            <div class="col-sm-8">
+                        <div class="position-relative row form-group"><label class="col-sm-3 col-form-label" for="jurusan_id">Jurusan</label>
+                            <div class="col-sm-9">
                                 <select name="jurusan_id" id="jurusan_id" class="form-control">
                                     <option disable="true" selected="true" disabled>--- Pilih Jurusan ---</option>
                                         @foreach ($jurusan as $key => $value)
@@ -22,8 +22,12 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="position-relative row form-group"><label class="col-sm-4 col-form-label" for="nama">Wali Kelas</label>
-                            <div class="col-sm-8">
+                        <div class="position-relative row form-group"><label class="col-sm-3 col-form-label" for="angkatan">Angkatan</label>
+                            <div class="col-sm-9"><input type="text" class="form-control" id="angkatan" name="angkatan" placeholder="Masukan Angkatan" value="" maxlength="50" required="">
+                                </div>
+                        </div>
+                        <div class="position-relative row form-group"><label class="col-sm-3 col-form-label" for="nama">Wali Kelas</label>
+                            <div class="col-sm-9">
                                 <select name="guru_id" id="guru_id" class="form-control">
                                     <option disable="true" selected="true" disabled>--- Pilih Wali Kelas ---</option>
                                         @foreach ($guru as $key => $value)

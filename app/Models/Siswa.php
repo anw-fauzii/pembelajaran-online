@@ -16,7 +16,8 @@ class Siswa extends Model
         'jk',
         'user_ortu',
         'ortu',
-        'kontak'
+        'kontak',
+        'rayon'
     ];
 
     public function kelas(){

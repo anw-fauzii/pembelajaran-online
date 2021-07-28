@@ -24,20 +24,23 @@ class KelasController extends Controller
             $data = Kelas::with('jurusan')->get();
             return Datatables::of($data)
                     ->addIndexColumn()
+                    ->addColumn('kelas', function($data) {
+                        $btn = '<a href="'.route('kelas.show', $data->id).'" data-toggle="tooltip" title="Lihat kelas" data-id="'.$data->id.'" data-original-title="Lihat" class="btn btn-info btn-sm">'.$data->nama.'</a>';
+                        return $btn;
+                     })
                     ->addColumn('action', function($row){
                            $btn = '<a href="javascript:void(0)" data-toggle="tooltip" title="Edit" data-id="'.$row->id.'" data-original-title="Edit" class="edit btn btn-info btn-sm edit"><i class="metismenu-icon pe-7s-pen"></i></a>';
                            $btn = $btn.' <a href="javascript:void(0)" data-toggle="tooltip" title="Hapus" data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-danger btn-sm delete"><i class="metismenu-icon pe-7s-trash"></i></a>';
-                           $btn = $btn.' <a href="'.route('kelas.show', $row->id).'" data-toggle="tooltip" title="Daftar Siswa" data-id="'.$row->id.'" data-original-title="Edit" class="btn btn-warning btn-sm"><i class="metismenu-icon pe-7s-users"></i></a>';
-    
+                          
                             return $btn;
                     })
                     ->addColumn('jurusan', function($data){
-                        return $data->jurusan->nama_jurusan;
+                        return $data->jurusan->kd_jurusan.' - '.$data->jurusan->nama_jurusan;
                     })
                     ->addColumn('guru', function($data){
                         return $data->guru->nama_guru;
                     })
-                    ->rawColumns(['action'])
+                    ->rawColumns(['action','kelas'])
                     ->make(true);
         }
         return view('kelas.index', compact('jurusan','guru'));
@@ -67,6 +70,7 @@ class KelasController extends Controller
                 'jurusan_id' => $request->jurusan_id,
                 'guru_id' => $request->guru_id,
                 'nama' => $request->nama,
+                'angkatan' => $request->angkatan,
             ]
         );
         return response()->json($kelas);

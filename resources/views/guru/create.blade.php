@@ -9,16 +9,16 @@
                     <div class="form-group">
                     <input type="hidden" name="id" id="id">
                     <input type="hidden" name="nip_old" id="nip_old">
-                        <div class="position-relative row form-group"><label class="col-sm-4 col-form-label" for="nip">NIP</label>
-                            <div class="col-sm-8"><input type="text" class="form-control" id="nip" name="nip" placeholder="Masukan Kode Jurusan" value="" maxlength="50" required="">
+                        <div class="position-relative row form-group"><label class="col-sm-3 col-form-label" for="nip">NIP</label>
+                            <div class="col-sm-9"><input type="text" class="form-control" id="nip" name="nip" placeholder="Masukan Kode Jurusan" value="" maxlength="50" required="">
                                 </div>
                         </div>
-                        <div class="position-relative row form-group"><label class="col-sm-4 col-form-label" for="nama_guru">Mata Pelajaran</label>
-                            <div class="col-sm-8"><input type="text" class="form-control" id="nama_guru" name="nama_guru" placeholder="Masukan Mata Pelajaran" value="" maxlength="50" required="">
+                        <div class="position-relative row form-group"><label class="col-sm-3 col-form-label" for="nama_guru">Nama</label>
+                            <div class="col-sm-9"><input type="text" class="form-control" id="nama_guru" name="nama_guru" placeholder="Masukan Nama" value="" maxlength="50" required="">
                                 </div>
                         </div>
-                        <div class="position-relative row form-group"><label class="col-sm-4 col-form-label" for="kontak">Kontak</label>
-                            <div class="col-sm-8"><input type="text" class="form-control" id="kontak" name="kontak" placeholder="Masukan Jurusan" value="" maxlength="50" required="">
+                        <div class="position-relative row form-group"><label class="col-sm-3 col-form-label" for="kontak">Kontak</label>
+                            <div class="col-sm-9"><input type="text" class="form-control" id="kontak" name="kontak" placeholder="Masukan Kontak" value="" maxlength="50" required="">
                                 </div>
                         </div>
                     </div>

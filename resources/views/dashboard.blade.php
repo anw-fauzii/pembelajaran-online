@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    <title>Mata Pelajaran</title>
+    <title>Dashboard</title>
 @endsection
 
 @section('content')
@@ -19,21 +19,17 @@
             </div>  
         </div> 
     </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="mb-3 card">
-                <div class="card-header-tab card-header-tab-animation card-header">
-                    <div class="card-header-title">
-                        Sukses !
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="tab-content">
-                        Berhasil Login
-                    </div>
-                </div> 
-            </div>
-        </div>    
-    </div>
+    @role('Admin')
+        @include('dashboard.admin')
+    @endrole
+    @role('Guru')
+        @include('dashboard.guru')
+    @endrole
+    @role('Siswa')
+        @include('dashboard.siswa')
+    @endrole
+    @role('Ortu')
+        @include('dashboard.ortu')
+    @endrole
 </div>
 @endsection

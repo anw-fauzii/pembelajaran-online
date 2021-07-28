@@ -17,7 +17,8 @@ $(function () {
         columns: [
             {data: 'DT_RowIndex', name: 'DT_RowIndex'},
             {data: 'jurusan', name: 'jurusan'},
-            {data: 'nama', name: 'nama'},
+            {data: 'kelas', name: 'kelas'},
+            {data: 'angkatan', name: 'angkatan'},
             {data: 'guru', name: 'guru'},
             {data: 'action', name: 'action', orderable: false, searchable: false},
         ]
@@ -45,6 +46,7 @@ $(function () {
                 $('#nama').val(data.nama);
                 $('#jurusan_id').val(data.jurusan_id);
                 $('#guru_id').val(data.guru_id);
+                $('#angkatan').val(data.angkatan);
         })
     });
 

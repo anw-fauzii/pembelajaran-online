@@ -36,7 +36,7 @@ $(function () {
 $('body').on('click', '.editJurusan', function () {
         var jurusan_id = $(this).data('id');
         $.get("jurusan" +'/' + jurusan_id +'/edit', function (data) {
-            $('#modelHeading').html("Edit Mata Pelajaran");
+            $('#modelHeading').html("Edit Jurusan");
                 $('#saveBtn').val("edit-mapel");
                 $('#modalCreateJurusan').modal('show');
                 $('#modalCreateJurusan').appendTo('body');

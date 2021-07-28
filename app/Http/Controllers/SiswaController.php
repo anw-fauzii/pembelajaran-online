@@ -7,6 +7,8 @@ use App\Models\User;
 use DataTables;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use App\Imports\SiswaImport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class SiswaController extends Controller
 {
@@ -26,6 +28,12 @@ class SiswaController extends Controller
                            $btn = $btn.' <a href="javascript:void(0)" data-toggle="tooltip" title="Hapus" data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-danger btn-sm delete"><i class="metismenu-icon pe-7s-trash"></i></a>';
     
                             return $btn;
+                    })
+                    ->addColumn('kelas', function($data){
+                        return $data->kelas->nama;
+                    })
+                    ->addColumn('jurusan', function($data){
+                        return $data->kelas->jurusan->kd_jurusan;
                     })
                     ->rawColumns(['action'])
                     ->make(true);
@@ -56,10 +64,13 @@ class SiswaController extends Controller
             $user_siswa->id = $request->nis;
             $user_siswa->password = Hash::make("12345678");
             $user_siswa->save();
+            $user_siswa->assignRole('Siswa');
+
             $user_ortu = new User;
             $user_ortu->id = "99$request->nis";
             $user_ortu->password = Hash::make("12345678");
             $user_ortu->save();
+            $user_ortu->assignRole('Ortu');
         }else{
             $user_siswa = User::find($request->nis_old);
             $user_siswa->id = $request->nis;
@@ -77,7 +88,8 @@ class SiswaController extends Controller
                 'jk' => $request->jk,
                 'user_ortu' => "99$request->nis",
                 'ortu' => $request->ortu,
-                'kontak' => $request->kontak
+                'kontak' => $request->kontak,
+                'rayon' => $request->rayon
             ]
         );
         return response()->json($siswa);
@@ -134,4 +146,19 @@ class SiswaController extends Controller
         $siswa->delete();
         return response()->json($siswa);
     }
+
+    public function import_excel(Request $request)
+    {
+    // validasi
+    $this->validate($request, [
+    'file' => 'required|mimes:csv,xls,xlsx'
+    ]);
+    // menangkap file excel
+    $file = $request->file('file')->store('File Siswa', 'public');
+    // import data
+    Excel::import(new SiswaImport, public_path('storage/'.$file));
+
+    return redirect('/siswa');
+    }
+
 }

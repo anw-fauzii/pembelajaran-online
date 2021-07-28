@@ -20,6 +20,28 @@ $(function () {
             {data: 'nama', name: 'nama'},
             {data: 'jk', name: 'jk'},
             {data: 'ortu', name: 'ortu'},
+            {data: 'rayon', name: 'rayon'},
+            {data: 'kontak', name: 'kontak'},
+            {data: 'action', name: 'action', orderable: false, searchable: false},
+        ]
+    });
+
+//Tabel Siswa
+    var table = $('.table-siswa-all').DataTable({
+        processing: true,
+        serverSide: true,
+        responsive: true,
+        autoWidth: false,
+        retrieve: true,
+        ajax: "",
+        columns: [
+            {data: 'DT_RowIndex', name: 'DT_RowIndex'},
+            {data: 'nis', name: 'nis'},
+            {data: 'jurusan', name: 'jurusan'},
+            {data: 'kelas', name: 'kelas'},
+            {data: 'nama', name: 'nama'},
+            {data: 'jk', name: 'jk'},
+            {data: 'rayon', name: 'rayon'},
             {data: 'kontak', name: 'kontak'},
             {data: 'action', name: 'action', orderable: false, searchable: false},
         ]
@@ -33,6 +55,14 @@ $(function () {
         $('#modelHeading').html("Tambah Siswa");
         $('#modalCreate').modal('show');
         $('#modalCreate').appendTo('body');
+    });
+
+    $('#import').click(function () {
+        $('#saveBtn').val("create-mapel");
+        $('#mapel_id').val('');
+        $('#formImport').trigger("reset");
+        $('#modalImport').modal('show');
+        $('#modalImport').appendTo('body');
     });
 
 //EDIT Siswa

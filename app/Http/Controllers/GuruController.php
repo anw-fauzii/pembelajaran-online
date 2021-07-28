@@ -20,16 +20,15 @@ class GuruController extends Controller
         if ($request->ajax()) {
             $data = Guru::all();
             return Datatables::of($data)
-                    ->addIndexColumn()
-                    ->addColumn('action', function($row){
-                           $btn = '<a href="javascript:void(0)" data-toggle="tooltip" title="Edit" data-id="'.$row->id.'" data-original-title="Edit" class="edit btn btn-info btn-sm edit"><i class="metismenu-icon pe-7s-pen"></i></a>';
-                           $btn = $btn.' <a href="javascript:void(0)" data-toggle="tooltip" title="Hapus" data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-danger btn-sm delete"><i class="metismenu-icon pe-7s-trash"></i></a>';
-    
-                            return $btn;
-                    })
-                    ->rawColumns(['action'])
-                    ->make(true);
-        }
+                ->addIndexColumn()
+                ->addColumn('action', function($row){
+                       $btn = '<a href="javascript:void(0)" data-toggle="tooltip" title="Edit" data-id="'.$row->id.'" data-original-title="Edit" class="edit btn btn-info btn-sm edit"><i class="metismenu-icon pe-7s-pen"></i></a>';
+                       $btn = $btn.' <a href="javascript:void(0)" data-toggle="tooltip" title="Hapus" data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-danger btn-sm delete"><i class="metismenu-icon pe-7s-trash"></i></a>';
+                        return $btn;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+            }
         return view('guru.index');
     }
 
@@ -56,11 +55,13 @@ class GuruController extends Controller
             $user->id = $request->nip;
             $user->password = Hash::make("12345678");
             $user->save();
+            $user->assignRole('Guru');
         }else{
             $user = new User;
             $user->id = $request->nip;
             $user->password = Hash::make("12345678");
             $user->save();
+            $user->assignRole('Guru');
         }
         $guru = Guru::updateOrCreate(
             ['id' => $request->id],

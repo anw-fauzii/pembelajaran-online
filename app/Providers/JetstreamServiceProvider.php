@@ -30,7 +30,7 @@ class JetstreamServiceProvider extends ServiceProvider
     public function boot()
     {
         Fortify::authenticateUsing(function (Request $request) {
-            $user = User::where(['id' => $request->id])->first();
+            $user = User::where(['username' => $request->username])->first();
             if ($user &&
                 Hash::check($request->password, $user->password)) {
                 return $user;

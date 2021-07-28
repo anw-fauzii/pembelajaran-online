@@ -12,7 +12,7 @@
                 <div class="page-title-icon">
                     <i class="pe-7s-users icon-gradient bg-mean-fruit"></i>
                 </div>
-                <div>Jadwal
+                <div>Rencana Pembelajaran
                     <div class="page-title-subheading">This is an example dashboard created using build-in elements and components.
                     </div>
                 </div>
@@ -24,7 +24,7 @@
             <div class="mb-3 card">
                 <div class="card-header-tab card-header-tab-animation card-header">
                     <div class="card-header-title">
-                    <a class="btn btn-success" href="javascript:void(0)" id="create"><i class="metismenu-icon pe-7s-note"></i> Tambah Jurusan</a>
+                    <a class="btn btn-success" href="javascript:void(0)" id="create"><i class="metismenu-icon pe-7s-note"></i> Tambah Jadwal</a>
                     </div>
                 </div>
                 <div class="card-body">
@@ -33,14 +33,12 @@
                             <table class="table table-striped table-hover table-jadwal">
                                 <thead>
                                     <tr class="text-center">
-                                        <th width="10%">No</th>
-                                        <th width="15%">Kelas</th>
+                                        <th width="8%">No</th>
+                                        <th width="12%">Kelas</th>
                                         <th width="20%">Mapel</th>
-                                        <th width="10%">Hari</th>
-                                        <th width="10%">Mulai</th>
-                                        <th width="10%">Selesai</th>
-                                        <th width="15%">Guru</th>
-                                        <th width="15%">Aksi</th>
+                                        <th width="35%">Guru</th>
+                                        <th width="15%">Tahun Ajaran</th>
+                                        <th width="10%">Aksi</th>
                                     </tr>
                                 </thead>
                             </table>
@@ -52,5 +50,11 @@
     </div>
 </div>
 @include('jadwal.create')
-<script src="{{asset('js/crud/jadwal.js')}}"></script>     
+<script src="{{asset('js/crud/jadwal.js')}}"></script> 
+<script>
+$('#myselect').select2({
+    width: '100%',
+    placeholder: "Pilih Kelas",
+});
+</script>    
 @endsection

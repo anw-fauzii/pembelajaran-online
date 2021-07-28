@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    <title>Guru</title>
+    <title>Siswa</title>
 @endsection
 
 @section('content')
@@ -12,7 +12,7 @@
                 <div class="page-title-icon">
                     <i class="pe-7s-users icon-gradient bg-mean-fruit"></i>
                 </div>
-                <div>Guru
+                <div>Siswa
                     <div class="page-title-subheading">This is an example dashboard created using build-in elements and components.
                     </div>
                 </div>
@@ -62,7 +62,7 @@
             <div class="mb-3 card">
                 <div class="card-header-tab card-header-tab-animation card-header">
                     <div class="card-header-title">
-                    <a class="btn btn-success" href="javascript:void(0)" id="create"><i class="metismenu-icon pe-7s-note"></i> Tambah Jurusan</a>
+                    <a class="btn btn-success" href="javascript:void(0)" id="create"><i class="metismenu-icon pe-7s-note"></i> Tambah Siswa</a>
                     </div>
                 </div>
                 <div class="card-body">
@@ -76,6 +76,7 @@
                                         <th width="17%">Nama</th>
                                         <th width="10%">JK</th>
                                         <th width="18%">Orang Tua</th>
+                                        <th width="18%">Rayon</th>
                                         <th width="15%">Kontak</th>
                                         <th width="15%">Aksi</th>
                                     </tr>

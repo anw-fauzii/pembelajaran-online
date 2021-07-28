@@ -16,7 +16,8 @@ class Absen extends Model
         'siswa_id',
         'tanggal',
         'keterangan',
-        'jam_absen'
+        'jam_absen',
+        'foto'
     ];
     
 }

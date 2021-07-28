@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    <title>Guru</title>
+    <title>Kelas</title>
 @endsection
 
 @section('content')
@@ -12,7 +12,7 @@
                 <div class="page-title-icon">
                     <i class="pe-7s-users icon-gradient bg-mean-fruit"></i>
                 </div>
-                <div>Guru
+                <div>Kelas
                     <div class="page-title-subheading">This is an example dashboard created using build-in elements and components.
                     </div>
                 </div>
@@ -24,7 +24,7 @@
             <div class="mb-3 card">
                 <div class="card-header-tab card-header-tab-animation card-header">
                     <div class="card-header-title">
-                    <a class="btn btn-success" href="javascript:void(0)" id="create"><i class="metismenu-icon pe-7s-note"></i> Tambah Jurusan</a>
+                    <a class="btn btn-success" href="javascript:void(0)" id="create"><i class="metismenu-icon pe-7s-note"></i> Tambah Kelas</a>
                     </div>
                 </div>
                 <div class="card-body">
@@ -33,10 +33,11 @@
                             <table class="table table-striped table-hover table-kelas">
                                 <thead>
                                     <tr class="text-center">
-                                        <th width="15%">No</th>
-                                        <th width="20%">Jurusan</th>
-                                        <th width="20%">Kelas</th>
-                                        <th width="30%">Wali Kelas</th>
+                                        <th width="8%">No</th>
+                                        <th width="25%">Jurusan</th>
+                                        <th width="15%">Kelas</th>
+                                        <th width="12%">Angkatan</th>
+                                        <th width="20%">Wali Kelas</th>
                                         <th width="15%">Aksi</th>
                                     </tr>
                                 </thead>
